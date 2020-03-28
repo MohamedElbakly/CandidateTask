@@ -25,6 +25,7 @@ namespace CandidateWebAPI.Controllers
         {
             this.candidateRepository = candidateRepository;
         }
+
         public HttpResponseMessage GetAllCandidates()
         {
             var CandidatesList = candidateRepository.GetCandidates().ToList();
