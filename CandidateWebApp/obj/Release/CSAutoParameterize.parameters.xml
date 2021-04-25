@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="NetwaysEntities-Web.config Connection String" description="NetwaysEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DataAccess.CandidateContext.csdl|res://*/DataAccess.CandidateContext.ssdl|res://*/DataAccess.CandidateContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MOHAMED-PC\MSSQLSERVER2017;initial catalog=Netways;persist security info=True;user id=sa;password=Pa$$w0rd;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\melbakly\\Desktop\\Docker\ Apps\\CandidateTask\\CandidateWebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NetwaysEntities']/@connectionString" />
+  </parameter>
+</parameters>

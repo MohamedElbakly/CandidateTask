@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NetwaysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NetwaysEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetCandidatesBySkill" ReturnType="Collection(NetwaysModel.GetCandidatesBySkill_Result)">
+      <Parameter Name="Skill" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Candidate_Skills" EntityType="NetwaysModel.Candidate_Skills" />
+    <EntitySet Name="Candidates" EntityType="NetwaysModel.Candidate" />
+    <EntitySet Name="Skills" EntityType="NetwaysModel.Skill" />
+  </EntityContainer>
+  <ComplexType Name="GetCandidatesBySkill_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Age" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Years_of_Experience" Nullable="true" />
+    <Property Type="String" Name="PreviousEmployer" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CurrentEmployer" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="Candidate_Skills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CandidateID" Type="Int64" />
+    <Property Name="SkillID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Years_of_Experience" Type="Int32" />
+    <Property Name="PreviousEmployer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentEmployer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
